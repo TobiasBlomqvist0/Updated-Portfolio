@@ -1,8 +1,11 @@
 "use client"
+import { useRouter } from "next/navigation"
+
 export default function BackBtn({page}:any) {
+    const router = useRouter()
     function backClick() {
-        if(page === "home") window.location.replace("/")
-        else window.location.replace(`/${page}`)
+        if(page === "home") router.replace("/")
+        else router.replace(`/${page}`)
     }
 
     return (

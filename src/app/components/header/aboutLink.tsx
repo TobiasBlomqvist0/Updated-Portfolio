@@ -1,7 +1,10 @@
 "use client"
+import { useRouter } from "next/navigation"
+import { usePathname } from 'next/navigation'
 export default function AboutLink() {
-    const pathname = window.location.pathname
+    const router = useRouter()
+    const pathname = usePathname()
     return (
-        <span onClick={()=> window.location.replace("/about")} className="text-2xl font-bold cursor-pointer mb-1" style={pathname === "/about" ? {borderBottom: "#0500FF solid 4px", marginBottom: "0"} : {}}>About</span>
+        <span onClick={()=> router.replace("/about")} className="text-2xl font-bold cursor-pointer mb-1" style={pathname === "/about" ? {borderBottom: "#0500FF solid 4px", marginBottom: "0"} : {}}>About</span>
     )
 }

@@ -1,8 +1,9 @@
 "use client"
+import { useRouter } from "next/navigation"
 export default function NextBtn({page}:any) {
-    
+    const router = useRouter()
     function nextClick() {
-        window.location.replace(`/${page}`)
+        router.replace(`/${page}`)
     }
 
     return (
